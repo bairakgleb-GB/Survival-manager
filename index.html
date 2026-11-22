@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101713">
+  <title>Убежище — Survival Manager</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark">S</div>
+        <div>
+          <p class="eyebrow">ПОСЛЕ КАТАСТРОФЫ</p>
+          <h1>SURVIVAL <span>MANAGER</span></h1>
+        </div>
+      </div>
+      <div class="top-status">
+        <span class="status-dot"></span>
+        <span>СИСТЕМА В СЕТИ</span>
+        <span class="divider"></span>
+        <span id="day-label">ДЕНЬ 1</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="intro panel">
+        <div>
+          <p class="eyebrow">ЦЕНТР УПРАВЛЕНИЯ · СЕКТОР 07</p>
+          <h2>Ваше убежище.</h2>
+          <p class="muted">Поддерживайте системы, распределяйте ресурсы и помогите жителям пережить следующий день.</p>
+        </div>
+        <button class="primary-button" id="next-day">Завершить день <span>→</span></button>
+      </section>
+
+      <section class="resource-grid" id="resource-grid" aria-label="Ресурсы"></section>
+
+      <div class="main-grid">
+        <section class="panel status-panel">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">ОБСТАНОВКА</p>
+              <h3>Состояние убежища</h3>
+            </div>
+            <span class="live-tag"><span class="status-dot"></span> LIVE</span>
+          </div>
+          <div id="status-list" class="status-list"></div>
+          <div class="population-card">
+            <div class="population-icon">♙</div>
+            <div>
+              <span class="muted small">ЖИТЕЛИ</span>
+              <strong id="population">12 человек</strong>
+            </div>
+            <span class="population-note" id="population-note">Все на месте</span>
+          </div>
+        </section>
+
+        <section class="panel build-panel">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">РАЗВИТИЕ</p>
+              <h3>Строительство</h3>
+            </div>
+            <span class="small muted">Выберите улучшение</span>
+          </div>
+          <div id="build-list" class="build-list"></div>
+        </section>
+      </div>
+
+      <section class="panel log-panel">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">ЦЕНТР СООБЩЕНИЙ</p>
+            <h3>Журнал событий</h3>
+          </div>
+          <button class="text-button" id="clear-log">Очистить</button>
+        </div>
+        <div id="event-log" class="event-log" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <footer>
+      <span>SURVIVAL MANAGER <span class="muted">v1.0.0</span></span>
+      <span>Прогресс сохраняется автоматически в этом браузере</span>
+      <button class="reset-button" id="reset-game">Сбросить игру</button>
+    </footer>
+  </div>
+  <div id="toast" class="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
